@@ -25,7 +25,7 @@
     "pretty-quick": "^1.4.1",
     "raw-loader": "^0.5.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react-dom": "^16.3.3",
     "react-helmet": "^5.2.0",
     "react-router": "^3.2.0",
     "react-svg-inline": "^2.1.0",
