@@ -1,0 +1,483 @@
+/* Using global sytles is not recommended, prefer local styles via CSS Modules */
+
+/*
+ * box model like it should be
+ *
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/*
+ * kill document defaults margin & padding. We all do that all the time, right ?
+ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * page styles
+ */
+html {
+  min-height: 100%;
+  background: rgba(222, 236, 241, 0.4);
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/*
+ * .phenomic-HeadingAnchor
+ *
+ * anchors for markdown headings, generated via markdown renderer, so require
+ * global styling
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+.phenomic-HeadingAnchor {
+  display: inline-block;
+  text-align: center;
+  margin-left: -1.8rem;
+  margin-right: 0.4rem;
+  width: 1.4rem;
+  line-height: 1.4rem;
+  text-decoration: none;
+  opacity: 0.1;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s
+}
+
+h1:hover .phenomic-HeadingAnchor,
+h2:hover .phenomic-HeadingAnchor,
+h3:hover .phenomic-HeadingAnchor,
+h4:hover .phenomic-HeadingAnchor,
+h5:hover .phenomic-HeadingAnchor,
+h6:hover .phenomic-HeadingAnchor {
+  opacity: 1;
+}
+
+/* minimal styling, prefer removing this and use local styles */
+a {
+  color: #A63A8E;
+  word-break: break-word; /* avoind long url to broke width on small screen */
+}
+
+/* handy for content */
+img {
+  max-width: 100%;
+}
+
+hr {
+  margin: 2rem 0;
+  height: 1px;
+  border: 0;
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(0, 0, 0, 0.1)),
+    color-stop(rgba(0, 0, 0, 0.25)),
+    to(rgba(0, 0, 0, 0.1))
+  );
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+/**
+ * You can try all official Highlight.js theme here
+ *
+ * https://highlightjs.org/static/demo/
+ *
+ * More themes here
+ *
+ * https://github.com/isagalaev/highlight.js/tree/master/src/styles
+ */
+
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+._2Mf6m {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+._116Tm {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+._1Ustb {
+  color: #eee;
+  background: #260c21;
+  text-align: center;
+}
+
+._21LuU {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  color: inherit;
+  text-decoration: none;
+}
+
+.MMp-P {
+  font-weight: 100;
+}
+._1KhX5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+._3i5XI {
+  height: 5vh;
+  min-height: 5rem;
+  width: 5vh;
+  min-width: 5rem;
+  border: 6px solid rgba(0, 0, 0, 0.2);
+  border-top-color: rgba(0, 0, 0, 0.8);
+  border-radius: 100%;
+  -webkit-animation: _3H5Gy 0.6s infinite linear 0.25s;
+          animation: _3H5Gy 0.6s infinite linear 0.25s;
+
+  /* the opacity is used to lazyload the spinner, see animation delay */
+  opacity: 0;
+}
+
+@-webkit-keyframes _3H5Gy {
+  from {
+    opacity: 1;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes _3H5Gy {
+  from {
+    opacity: 1;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+.f230z {
+  max-width: 20rem;
+  margin: auto
+}
+
+.f230z svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+._3tvHs,
+._35TZa {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+._3tvHs {
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF0099), to(#A63A8E));
+  background: linear-gradient(#FF0099, #A63A8E);
+}
+
+._35TZa {
+  color: #A63A8E;
+  background: #fff;
+  font-weight: 600;
+}
+._1Zu4s {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 50vh;
+  padding: 1rem 0;
+}
+
+._2vfNd {
+  font-size: 4rem;
+  line-height: 4rem;
+  color: #ddd;
+}
+
+._3DufC {
+  margin: 4rem 0;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+}
+.sFWsg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*font-size: 1.3rem;
+  line-height: 2rem;*/
+  color: #333;
+  font-weight: 300;
+}
+
+.hOK0m {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  max-width: 60rem;
+  padding: 1rem 0.75rem;
+}
+
+._3wrxV {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem 0;
+  padding: 6vh 0;
+  text-align: center;
+  color: #eee;
+  background: radial-gradient(
+      ellipse at 50% 30%,
+      rgba(255, 0, 153, 0.7) 15%,
+      rgba(0, 0, 0, 0.8) 70%
+    ),
+    -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.6))),
+    /*radial-gradient(
+      ellipse at 50% 50%,
+      color(#260c21 l(+ 15%) a(0.9)) 15%,
+      color(#260c21 a(0.95)) 70%
+    ),*/
+      /* https://www.flickr.com/photos/falcon_33/30626854706/ */
+      /* url("https://farm6.staticflickr.com/5526/30626854706_feb72a9436_k_d.jpg") */
+      /* https://www.flickr.com/photos/marc-dupuy/12889862044/*/
+      url("https://farm8.staticflickr.com/7308/12889862044_65568078ee_k_d.jpg")
+      50% 30% / cover;
+  background: radial-gradient(
+      ellipse at 50% 30%,
+      rgba(255, 0, 153, 0.7) 15%,
+      rgba(0, 0, 0, 0.8) 70%
+    ),
+    linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6)),
+    /*radial-gradient(
+      ellipse at 50% 50%,
+      color(#260c21 l(+ 15%) a(0.9)) 15%,
+      color(#260c21 a(0.95)) 70%
+    ),*/
+      /* https://www.flickr.com/photos/falcon_33/30626854706/ */
+      /* url("https://farm6.staticflickr.com/5526/30626854706_feb72a9436_k_d.jpg") */
+      /* https://www.flickr.com/photos/marc-dupuy/12889862044/*/
+      url("https://farm8.staticflickr.com/7308/12889862044_65568078ee_k_d.jpg")
+      50% 30% / cover;
+}
+
+._1Tkeg {
+  font-weight: 300;
+  text-shadow: 0 0 10px #000;
+}
+
+.HfX9U {
+  width: 100%;
+  margin: 2rem 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+._30RKo {
+}
